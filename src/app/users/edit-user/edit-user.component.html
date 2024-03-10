@@ -1,0 +1,42 @@
+<div class="container w-75 my-5">
+    <div class="row border rounded">
+        <div class="col-lg-6">
+            <img src="https://i.postimg.cc/WzDg9Sxg/unnamed.gif" class="w-100 " height="330" alt="">
+        </div>
+        <div class="col-lg-6 bg-body-secondary text-dark">
+
+            <form (ngSubmit)="updataeData()"  class="p-4">
+                <h4 class="text-dark mb-4">Update Employee</h4>
+                <div class="form-floating mb-2">
+                    <input [(ngModel)]="userData.name" name="name" type="text" class="form-control" id="name" placeholder="Name">
+                    <label for="name">Name</label>
+                </div>
+                
+                <div class="form-floating mb-3">
+                    <input [(ngModel)]="userData.email"  name="email" type="email" class="form-control" id="email" placeholder="name@example.com">
+                    <label for="email">Email address</label>
+                </div>
+                <div class="dropdown ">
+                    <select [(ngModel)]="userData.status"   class="w-100 p-2 rounded " name="status" id="status1">
+                        <option disabled selected hidden value="" >Status</option>
+                        <option  value="1">Active</option>
+                        <option  value="0">Inactive </option>
+                    </select>
+                   
+                </div>
+               
+                  <!-- <select [(ngModel)]="userData.status"  class="form-select" name="sts" id="s1" >
+                    <option selected hidden disabled>Status</option>
+                    <option value="1">Active</option>
+                    <option value="2">InActive</option>
+                  </select> -->
+
+                <div>
+                    <button  type="submit" class="w-100 mt-4 btn btn-primary">Update</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,42 @@
+.demo-inline-calendar-card {
+    width: 200px;
+  }
+
+/* #cal{
+    width: 100px;
+} */
+#nav{
+    height: 600px;
+}
+#links a{
+    text-decoration: none;
+    color: white;
+}
+#links hr{color: white;}
+
+#banner{
+    height: 160px;
+    background-image: url("https://i.postimg.cc/SxDnxzJr/abstract-geometric-black-design-dark-gray-banner-pattern-background-brochure-website-flyer-112380-15.avif");
+    background-size: cover;
+}
+#banner2{
+    height: 70px;
+    background-image: url("https://i.postimg.cc/SxDnxzJr/abstract-geometric-black-design-dark-gray-banner-pattern-background-brochure-website-flyer-112380-15.avif");
+    background-size: cover;
+
+}
+
+#banner{
+   
+      
+        animation: bounce; /* referring directly to the animation's @keyframe declaration */
+        animation-duration: 2s; /* don't forget to set a duration! */
+}
+
+/* responsive */
+
+@media(max-width:500px){
+    #nav{
+        height: 300px;
+    }
+}

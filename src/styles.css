@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One:ital@0;1&family=Barriecito&family=Berkshire+Swash&family=Kaushan+Script&family=Macondo&family=Monoton&family=Mukta:wght@200&family=Oswald:wght@200..700&family=Playfair+Display&family=Roboto:wght@100&family=Teko:wght@300&family=Yellowtail&display=swap');
+@import 'ngx-toastr/toastr';
+
+*{
+    padding:0;
+    margin:0;
+}
+
+
+body{
+    margin:0;
+    font-family: "Playfair Display", serif;
+}

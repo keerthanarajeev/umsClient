@@ -1,0 +1,51 @@
+<div class="container w-75 my-5">
+    <div class="row border rounded">
+        <div class="col-lg-6">
+            <img src="https://i.postimg.cc/1tRDhyVG/aboutus.gif" class="w-100 " height="330" alt="">
+        </div>
+        <div class="col-lg-6 bg-body-secondary">
+
+            <form [formGroup]="addFormModel" (ngSubmit)="add()" class="p-4">
+                <h4 class="text-dark mb-4">Add New Employee</h4>
+                <div class="form-floating mb-2">
+                    <input formControlName="name" type="text" class="form-control" id="name" placeholder="Name">
+                    <label for="name">Name</label>
+                </div>
+                <!-- Error message for name -->
+                <div *ngIf="addFormModel.get('name')?.errors&&addFormModel.get('name')?.touched">
+                    <p  class="text-danger" style="font-size:small;">Please enter valid Name</p>
+                  </div>
+                <div class="form-floating mb-3">
+                    <input formControlName="email" type="email" class="form-control" id="email" placeholder="name@example.com">
+                    <label for="email">Email address</label>
+                </div>
+
+                <!-- Error message for name -->
+                <div *ngIf="addFormModel.get('email')?.errors&&addFormModel.get('email')?.touched">
+                    <p  class="text-danger" style="font-size:small;">Please enter valid Email</p>
+                  </div>
+                
+                  <!-- <select class="form-select" name="sts" id="s1" formControlName="status">
+                    <option selected hidden disabled>Status</option>
+                    <option value="1">Active</option>
+                    <option value="2">InActive</option>
+                  </select> -->
+
+                  <div class="dropdown ">
+                    <select formControlName="status" class="w-100 p-2 rounded " name="status" id="status1">
+                        <option disabled selected hidden value="" >Status</option>
+                        <option  value="1">Active</option>
+                        <option  value="0">Inactive </option>
+                    </select>
+                   
+                </div>
+
+                <div>
+                    <button type="submit" class="w-100 mt-4 btn btn-primary">Add</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+</div>

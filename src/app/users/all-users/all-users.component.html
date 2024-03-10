@@ -1,0 +1,98 @@
+<div class="container p-5">
+  <div class="row">
+    <div class="col-lg-8">
+      <h4 class="text-center m-3 fw-bold">USERS DIRECTORY</h4>
+      <hr>
+      <div class="input-group mb-3 mt-5">
+        <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <div class="form-floating">
+          <input  [(ngModel)]="userName" name="search" type="text" class="form-control" id="floatingInputGroup1" placeholder="Username">
+          <label for="floatingInputGroup1">Username</label>
+        </div>
+      </div>
+
+      <table  data-aos="fade-up-right "  class="table w-100 shadow table-striped  " >
+        <thead>
+          <tr class="table-dark">
+            <th scope="col">#</th>
+            <th scope="col">User Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Status</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+
+          <tr *ngFor="let i of allusers | search:userName:'name'  | filter : filterData | sort : sortData | paginate: { itemsPerPage: 5, currentPage: p };  let j=index">
+            <th scope="row">{{j+1}}</th>
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.email}}</td>
+            <td><i [ngClass]="i.status==1?'text-success':'text-danger'"
+              class="fa-solid fa-circle-exclamation"></i>
+              {{i.status==0?'Inactive':'Active'}}</td>
+          <td>
+
+              <a routerLink="edit-user/{{i.id}}" class="btn btn-secondary">
+                <i class="fa-solid fa-user-pen"></i></a>
+
+              <button (click)="removeUser(i.id)" class="btn btn-dark rounded ms-2">
+                <i class="fa-solid fa-user-xmark"></i> </button>
+            </td>
+          </tr>
+
+
+
+        </tbody>
+      </table>
+
+      <pagination-controls class="text-center" (pageChange)="p = $event"></pagination-controls>
+
+</div>
+
+    <div data-aos="fade-down-right" class="col-lg-4 border border-black rounded shadow-lg my-3">
+      <div class="rounded shadow m-1 mt-2  bg-dark p-4 ">
+
+        <div>
+          <a routerLink="add-user"> <button class="w-100 rounded p-2">Add New User<span class="ms-2"><i
+                  class="fa-solid fa-user-plus"></i></span></button></a>
+
+        </div>
+        <hr class="text-light">
+
+        <div>
+          <button (click)="convertPdf()" class="w-100 rounded p-2">Export as Pdf <span class="ms-2"><i
+                class="fa-solid fa-file-pdf"></i></span></button>
+
+        </div>
+
+        <hr class="text-light">
+
+        <div class="dropdown ">
+          <button class="btn btn-light dropdown-toggle w-100" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Filter <i class="fa-solid fa-filter ms-2"></i>
+          </button>
+          <ul class="dropdown-menu w-100">
+            <li><button (click)="changeFilterData('0')" class="dropdown-item" href="#">InActive</button></li>
+            <li><button (click)="changeFilterData('1')" class="dropdown-item" href="#">Active</button></li>
+            <li><button (click)="changeFilterData('')" class="dropdown-item" href="#">Remove Filter</button></li>
+          </ul>
+        </div>
+<hr class="text-light">
+        <div>
+          <button (click)="changeSortData()" class="w-100 rounded p-2 ">Sort Name<i class="fa-solid fa-arrow-up-a-z ps-2"></i></button> 
+        </div>
+      </div>
+
+      <img src="https://i.postimg.cc/Wb5F93yf/Android-Security-And-Privacy-1024x512-01-Updated-1.png" alt=""
+        class="img img-fluid px-2 py-3">
+
+    </div>
+
+  </div>
+
+</div>

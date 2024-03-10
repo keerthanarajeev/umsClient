@@ -1,0 +1,54 @@
+
+
+
+<div class="card my-5 container py-4 shadow" style="max-width: 840px;">
+  <div class="row g-0">
+    <div class="col-md-5">
+      <img src="https://i.postimg.cc/NM0pLr5P/107385-login.gif" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-7">
+      <div class="card-body pt-5">
+
+      <form (ngSubmit)="login()" [formGroup]="LoginFormModel">
+
+        <h4>Admin Login</h4>
+
+        <!-- email -->
+
+        <div class="input-group mt-4 mb-3">
+          <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+          <div class="form-floating">
+            <input type="email" formControlName="email" name="email1" class="form-control" id="floatingInputGroup1" placeholder="name@example.com">
+            <label for="floatingInputGroup1">Email address</label>
+          </div>
+        </div>
+
+        <!-- error messege -->
+
+        <div class="ms-5" *ngIf="LoginFormModel.get('email')?.errors && LoginFormModel.get('email')?.touched">
+          <p class="text-danger" style="font-size: 12px;">Please enter a valid email</p>
+        </div>
+
+        <!-- password -->
+
+        <div class="input-group mb-3">
+          <span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
+          <div class="form-floating">
+            <input type="password" formControlName="pswd" name="Password1" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+          </div>
+        </div>
+
+        <!-- error messege -->
+
+        <div class="ms-5" *ngIf="LoginFormModel.get('pswd')?.errors && LoginFormModel.get('pswd')?.touched">
+          <p class="text-danger " style="font-size: 12px;">include letters and numbers only </p>
+        </div>
+          
+          <button type="submit" class="btn btn-primary w-100 mt-2">Login</button>
+      </form>
+
+      </div>
+    </div>
+  </div>
+</div>

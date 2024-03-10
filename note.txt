@@ -1,0 +1,22 @@
+parent child component communication in angular
+
+-----------------------------------
+
+
+parent to child  -> decorator @Input()
+child to parent  -> decorator @Input() with event emitting (new event creation)
+
+
+event creation
+
+EventEmitter class used to create user ddfined events
+
+emit() - method used to define when theevent want to work
+
+
+Route guard in angular
+------------------------
+
+One of the ways Angular helps you secure your application is through route guards. Route guards control whether a user can navigate to or away from a particular route. 
+
+ng generate guard auth - ng g g auth

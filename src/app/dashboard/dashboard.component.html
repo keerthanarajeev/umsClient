@@ -1,0 +1,72 @@
+<div class="row">
+
+    <div *ngIf="menuSlide" class="col-lg-2 pt-5 ps-4 bg-dark " id="nav">
+
+        <div id="links">
+            <a href="">
+                <div>
+                    <strong>
+                        <i class="fa-solid fa-house mx-3"></i>
+                        Home
+                    </strong>
+                </div>
+            </a>
+            <hr>
+            <a routerLink="/users">
+                <div>
+                    <strong>
+                        <i class="fa-solid fa-users mx-3"></i>
+                        Users
+                    </strong>
+                </div>
+            </a>
+            <hr>
+            <a >
+                <div (click)="logout()">
+                    <strong>
+                        <i class="fa-solid fa-right-from-bracket mx-3"></i>
+                        Logout
+                    </strong>
+                </div>
+            </a>
+            <hr>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-7 ps-3 ps-0">
+        <div id="banner" class="m-2 rounded shadow-lg d-flex align-items-center">
+            <i (click)="menuClick()" class="fa-solid fa-bars fa-2x ms-5 text-white" style="cursor: pointer;"></i>
+            <h2 class="text-white ms-3">Welcome {{AdminUserName}}</h2>
+        </div>
+
+        <div class="row m-2">
+            <div class="col-lg-4 p-2 shadow-lg border rounded" data-aos="fade-up-left">
+                <!-- calender -->
+                <h4 class="ms-4">Calender</h4>
+                <div class="cal ">
+                    <mat-card class="demo-inline-calendar-card">
+                        <mat-calendar [(selected)]="selected"></mat-calendar>
+                    </mat-card>
+                </div>
+
+            </div>
+            <div class="col-lg-8 ps-3 shadow-lg border rounded" data-aos="fade-down-left">
+                <!-- pychart -->
+                <app-chart></app-chart>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-lg-3 border rounded shadow-lg my-2" data-aos="fade-up-left">
+        <!-- profile edit -->
+        <app-admin-edit [data]="date" (onAdminChange)="updateAdmin($event)"></app-admin-edit>
+
+        <div id="banner2" class="m-3 rounded shadow-lg d-flex align-items-center">
+            <h6 class="text-white p-4">Total Number of Users : {{employeeCount}}</h6>
+        </div>
+    </div>
+
+</div>
